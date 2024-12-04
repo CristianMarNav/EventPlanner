@@ -19,6 +19,25 @@ public class Eventask {
         this.text = text;
         this.isCompleted = isCompleted;
     }
+    // Getter para el texto de la tarea
+    public String getText() {
+        return text;
+    }
+
+    // Setter para el texto de la tarea
+    public void setText(String text) {
+        this.text = text;
+    }
+
+    // Getter para el estado de completado de la tarea
+    public boolean isCompleted() {
+        return isCompleted;
+    }
+
+    // Setter para el estado de completado de la tarea
+    public void setCompleted(boolean isCompleted) {
+        this.isCompleted = isCompleted;
+    }
 
     /**
      * Método para obtener los detalles de la tarea en formato String.
