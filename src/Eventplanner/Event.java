@@ -1,5 +1,6 @@
 package Eventplanner;  // Paquete que agrupa las clases relacionadas con la planificación de eventos
 
+import Eventplanner.Priority; // Asegúrate de que este import esté presente
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -13,7 +14,7 @@ public class Event {
     private String title; // Título del evento.
     private LocalDate date; // Fecha del evento.
     private Priority priority; // Prioridad del evento (HIGH, MEDIUM, LOW)
-    private ArrayList<EventTask> task;
+    private ArrayList<Eventask> task;
 
     /**
      * Constructor para crear un evento con los datos básicos.
@@ -26,16 +27,16 @@ public class Event {
 
         this.title = title;
         this.date = date;
-        this.priority priority;
-        this.tasks = new ArrayList<EventTask>();
+        this.priority = priority;
+        this.task = new ArrayList<Eventask>();
     }
 
     /**
-     *  Método para agregar una tarea a este evento.
-     * @param tasks Tarea a agregar.
+     * Método para agregar una tarea a este evento.
+     * @param task Tarea a agregar.
      */
-    public void addTask(EvenTask) {
-        tasks.add(task);
+    public void addTask(Eventask task) {
+        this.task.add(task);
     }
 
     /**
@@ -46,7 +47,7 @@ public class Event {
      * @return
      */
     public String toString() {
-        return "Evento: " + title + ", Fecha: " + date + ", Prioridad: " + priority + ", Tareas: " + tasks.size();
+        return "Evento: " + title + ", Fecha: " + date + ", Prioridad: " + priority + ", Tareas: " + task.size();
     }
 
 }
