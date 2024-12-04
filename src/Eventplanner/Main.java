@@ -22,11 +22,11 @@ public class Main {
         do {
             // Mostrar opciones del menú.
             System.out.println("Bienvenido a Event Planner. Seleccione una opción: ");
-            System.out.println("[1] Añadir evento");
-            System.out.println("[2] Borrar evento");
-            System.out.println("[3] Listar eventos");
-            System.out.println("[4] Marcar/desmarcar tarea de un evento como completada");
-            System.out.println("[5] Salir");
+            System.out.println("[1] Añadir evento 🗓️");
+            System.out.println("[2] Borrar evento 🗑️");
+            System.out.println("[3] Listar eventos 🗒️");
+            System.out.println("[4] Marcar/desmarcar tarea de un evento como completada  ✅ ❌");
+            System.out.println("[5] Salir 🚪");
 
             // Leemos la opción seleccionada por el usuario.
             System.out.println("Elige una opción: ");
