@@ -1,3 +1,5 @@
+package Eventplanner;  // Paquete que agrupa las clases relacionadas con la planificación de eventos
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 

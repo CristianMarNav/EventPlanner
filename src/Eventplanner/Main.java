@@ -1,3 +1,5 @@
+package Eventplanner;  // Paquete principal para ejecutar la aplicación EventPlanner
+
 import java.util.Scanner; // Importamos Scanner para leer datos desde la consola
 
 /**
