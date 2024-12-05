@@ -1,8 +1,8 @@
-package Eventplanner;  // Paquete que agrupa las clases relacionadas con la planificación de eventos
+package Eventplanner;  // Paquete que agrupa las clases relacionadas con la planificación de eventos.
 
-import Eventplanner.Priority; // Asegúrate de que este import esté presente
-import java.time.LocalDate;
-import java.util.ArrayList;
+import Eventplanner.Priority;
+import java.time.LocalDate; // Importa LocalDate para manejar fechas en formato (YYYY-MM--DD).
+import java.util.ArrayList; // Importa ArrayliLst para
 
 /**
  * Clase que representa un evento dentro de la aplicación EventPlanner.
@@ -13,7 +13,7 @@ public class Event {
 
     private String title; // Título del evento.
     private LocalDate date; // Fecha del evento.
-    private Priority priority; // Prioridad del evento (HIGH, MEDIUM, LOW)
+    private Priority priority; // Prioridad del evento (HIGH, MEDIUM, LOW).
     private ArrayList<Eventask> task;
 
     /**
@@ -84,10 +84,9 @@ public class Event {
      *
      * Este método retorna los detalles del evento incluyendo el título, la fecha, la prioridad y el número de tareas
      * asociadas a este evento.
-     * @return
+     * @return String con los detalles del evento.
      */
     public String toString() {
         return "Evento: " + title + ", Fecha: " + date + ", Prioridad: " + priority + ", Tareas: " + task.size();
     }
-
 }

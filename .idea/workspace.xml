@@ -5,6 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="513b8814-1301-4c49-a96c-24bae023a169" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Eventplanner/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Eventplanner/Event.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Eventplanner/Eventask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Eventplanner/Eventask.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Eventplanner/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Eventplanner/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -72,5 +75,15 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.time.format.DateTimeParseException" package="java.time.format" />
+          <option name="timeStamp" value="2" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

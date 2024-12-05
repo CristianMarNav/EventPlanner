@@ -7,54 +7,58 @@ package Eventplanner;  // Paquete principal para la aplicación EventPlanner.
 
 public class Eventask {
 
-    private String text; // Descripción de la tarea.
+    private String taskName; // Descripción de la tarea.
     private boolean isCompleted; // Estado de la tarea (true: completada, false: no completada).
 
     /**
      * Constructor para crear una tarea con su descripción y estado.
-     * @param text        Descripción de la tarea.
+     * @param taskName Descripción de la tarea.
      * @param isCompleted Estado de la tarea (true: completado, false: no completado).
      */
-    public Eventask(String text, boolean isCompleted) {
-        this.text = text;
-        this.isCompleted = isCompleted;
-    }
-    // Getter para el texto de la tarea
-    public String getText() {
-        return text;
+    public Eventask(String taskName, boolean isCompleted) {
+        this.taskName = taskName; // Inicializamos el nombre de la tarea.
+        this.isCompleted = isCompleted; // Inicializamos el estado de la tarea.
     }
 
-    // Setter para el texto de la tarea
-    public void setText(String text) {
-        this.text = text;
+    // Getter y Setter para el nombre de la tarea.
+    public String getTaskName() {
+        return taskName; // Devuelve el nombre de la tarea.
     }
 
-    // Getter para el estado de completado de la tarea
+    public void setTaskName(String taskName) {
+        this.taskName = taskName; // Establece el nombre de la tarea.
+    }
+
+    // Getter y Setter para el estado de la tarea.
     public boolean isCompleted() {
-        return isCompleted;
+        return isCompleted; // Devuelve el estado de la tarea (completada o no).
     }
 
-    // Setter para el estado de completado de la tarea
     public void setCompleted(boolean isCompleted) {
-        this.isCompleted = isCompleted;
+        this.isCompleted = isCompleted; // Establece el estado de la tarea.
     }
 
     /**
-     * Método para obtener los detalles de la tarea en formato String.
-     * Este método retorna los detalles de la tarea, incluyendo la descripción y el estado.
-     * @return
+     *   Método para cambiar el estado de la tarea (marcar como completada o no).
+     *   Invertimos el estado de la tarea, de completada a no completada o viceversa.
+     */
+    public void toggleTaskStatus() {
+        this.isCompleted = !this.isCompleted; // Invertimos el valor de isCompleted.
+    }
+
+    /**
+     * Método para obtener los detalles de la tarea en formato String incluyendo la descripción y el estado.
+     * @return Los detalles de la tarea como String.
      */
     public String toString() {
         // Retorna los detalles de la tarea, mostrando si está completada o no.
         if (isCompleted) {
-            return "Tarea: " + text + ", Estado: Completada";
+            return "Tarea: " + taskName + ", Estado: Completada"; // Si la tarea está completada.
         } else {
-            return "Tarea: " + text + ", Estado: No completado";
+            return "Tarea: " + taskName + ", Estado: No completado"; // Si la tarea no esta completada.
         }
     }
 }
-
-
 
 
 
