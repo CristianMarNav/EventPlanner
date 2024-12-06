@@ -34,21 +34,24 @@ public class Eventask {
         return isCompleted; // Devuelve el estado de la tarea (completada o no).
     }
 
+    /**
+     * Estableces el estado de la tarea.
+     * @param isCompleted Estado de la tarea (completada o no),
+     */
     public void setCompleted(boolean isCompleted) {
         this.isCompleted = isCompleted; // Establece el estado de la tarea.
     }
 
     /**
-     *   Método para cambiar el estado de la tarea (marcar como completada o no).
-     *   Invertimos el estado de la tarea, de completada a no completada o viceversa.
+     * Método para cambiar el estado de la tarea (marcar como completada o no).
      */
-    public void toggleTaskStatus() {
+    public void toggleTasKStatus() {
         this.isCompleted = !this.isCompleted; // Invertimos el valor de isCompleted.
     }
 
     /**
      * Método para obtener los detalles de la tarea en formato String incluyendo la descripción y el estado.
-     * @return Los detalles de la tarea como String.
+     * @return  Los detalles de la tarea como String.
      */
     public String toString() {
         // Retorna los detalles de la tarea, mostrando si está completada o no.
@@ -58,10 +61,15 @@ public class Eventask {
             return "Tarea: " + taskName + ", Estado: No completado"; // Si la tarea no esta completada.
         }
     }
+
+    /**
+     * Método para marcar la tarea como completada.
+     * @param status Estado de la tarea (completada o no).
+     */
+        public void markTaskCompleted(boolean status) {
+            this.isCompleted = status; // Actualiza el estado de la tarea a completada o no.
+    }
 }
-
-
-
 
 
 

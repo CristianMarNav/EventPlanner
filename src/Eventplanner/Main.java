@@ -27,8 +27,8 @@ public class Main {
         // Definimos el formato de la fecha, el cual será 'yyyy-MM-dd'.
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
-        //Variable para almacenar la opción seleccionada por el usuario
-        int opcion; // Variable para almacenar la opción seleccionada por el usuario.
+        //Variable para almacenar la opción seleccionada por el usuario.
+        int opcion;
 
         // Bucle do-while que continuará mostrando el menú hasta que el usuario elija salir.
         do {
@@ -93,7 +93,6 @@ public class Main {
                     // Aquí llamaremos al método para borrar eventos.
                     System.out.println("Borrar evento");
 
-
                     // Verificamos si la lista de eventos está vacia.
                     if (eventList.isEmpty()) {
                         System.out.println("No hay eventos para eliminar");
@@ -129,14 +128,78 @@ public class Main {
                 case 3:
                     // Aquí llamaremos al método para listar eventos.
                     System.out.println("Listar eventos");
-                    for (Event evento : eventList) {
-                        System.out.println(evento); // El método toString() de la clase Event se encargará de mostrar el evento.
+
+                    if (eventList.isEmpty()) {
+                        System.out.println("No hay eventos disponibles.");
+                    } else {
+                        // Recorremos la lista de eventos y los mostramos al usuario.
+                        for (Event evento : eventList) {
+                            System.out.println(evento); // El método toString() de la clase Event se encargará de mostrar el evento.
+
+                            // Listamos las tareas de cada evento.
+                            System.out.println("Tareas asociadas:");
+                            for (Eventask tarea : evento.getTasks()) {
+                                System.out.println(tarea); // Esto usa el toString() de Eventtask para mostrar si está completada o no.
+                            }
+                        }
                     }
                     break;
 
                 case 4:
-                    // Aquí llamaremos al método para marcar o desmarcar una tarea de un evento
-                    System.out.println("Marcar/desmarcar tarea de evento");
+                    // Marcar o desmarcar tareas como completadas.
+                    System.out.println("Marcar/desmarcar tarea como completada");
+                    if (eventList.isEmpty()) {
+                        System.out.println("No hay eventos disponibles.");
+                    } else {
+                        for (int i = 0; i < eventList.size(); i++) {
+                            System.out.println(i + 1 + ". " + eventList.get(i).getTitle());
+                        }
+
+                        System.out.print("Introduce el número del evento que deseas modificar: ");
+                        int eventToModify = input.nextInt();
+                        input.nextLine(); // Limpiamos el buffer
+
+                        if (eventToModify > 0 && eventToModify <= eventList.size()) {
+                            Event selectedEvent = eventList.get(eventToModify - 1); // Accedemos al evento seleccionado.
+                            System.out.println("Tarea actual: ");
+                            for (int j = 0; j < selectedEvent.getTasks().size(); j++) {
+                                System.out.println((j + 1) + ". " + selectedEvent.getTasks().get(j));
+                            }
+
+                            System.out.print("¿Quieres marcar la tarea como completada? (si/no): ");
+                            String response = input.nextLine();
+
+                            if (response.equals("si")) {
+                                // Marca la tarea como completada.
+                                System.out.print("Introduce el número de la tarea que deseas marcar como completada: ");
+                                int taskIndex = input.nextInt();
+                                input.nextLine(); // Limpiamos el buffer para evitar problemas con entradas posteriores.
+
+                                if (taskIndex > 0 && taskIndex <= selectedEvent.getTasks().size()) {
+                                    selectedEvent.getTasks().get(taskIndex - 1).markTaskCompleted(true);
+                                    System.out.println("Tarea marcada como completada.");
+                                } else {
+                                    System.out.println("Número de tarea inválido.");
+                                }
+                            } else if (response.equals("no")) {
+                                // Desmarca la tarea como completada.
+                                System.out.print("Introduce el número de la tarea que deseas desmarcar como completada: ");
+                                int taskIndex = input.nextInt();
+                                input.nextLine(); // Limpiamos el buffer para evitar problemas con entradas posteriores.
+
+                                if (taskIndex > 0 && taskIndex <= selectedEvent.getTasks().size()) {
+                                    selectedEvent.getTasks().get(taskIndex - 1).markTaskCompleted(false);
+                                    System.out.println("Tarea desmarcada como no completada.");
+                                } else {
+                                    System.out.println("Número de tarea inválido.");
+                                }
+                            } else {
+                                System.out.println("Respuesta no válida.");
+                            }
+                        } else {
+                            System.out.println("Número de evento inválido.");
+                        }
+                    }
                     break;
 
                 case 5:
